@@ -1,86 +1,111 @@
-# """List Assessment 
+"""List Assessment
 
-# Edit the functions until all of the doctests pass when
-# you run this file.
-# """
-
-
-# def all_odd(numbers):
-#     """Return a list of only the odd numbers in the input list.
-
-#     For example::
-
-#         >>> all_odd([1, 2, 7, -5])
-#         [1, 7, -5]
-
-#         >>> all_odd([2, -6, 8])
-#         []
-#     """
-    #### if  number if divisable by 2 even
-    ####### else odd
-    ######
-#     return ['the wrong thing']
+Edit the functions until all of the doctests pass when
+you run this file.
+"""
 
 
-# def print_indices(items):
-#     """Print index of each item in list, followed by item itself.
+def all_odd(numbers):
+    """Return a list of only the odd numbers in the input list.
 
-#     Do this without using a "counting variable" --- that is, don't
-#     do something like this::
+    For example::
 
-#         count = 0
-#         for item in list:
-#             print count
-#             count = count + 1
+        >>> all_odd([1, 2, 7, -5])
+        [1, 7, -5]
 
-#     Output should look like this::
+        >>> all_odd([2, -6, 8])
+        []
+    """
+    #create empt list to append to
 
-#         >>> print_indices(["Toyota", "Jeep", "Volvo"])
-#         0 Toyota
-#         1 Jeep
-#         2 Volvo
+    all_odd_nums = []
 
-#         >>> print_indices(["Toyota", "Jeep", "Toyota", "Volvo"])
-#         0 Toyota
-#         1 Jeep
-#         2 Toyota
-#         3 Volvo
- 
-#     """
-#     # use range to count
+    #iterate through the numbers that are passed into the fuction call
+    for num in numbers:
+        if num % 2 == 1: # if num / 2, has a remainder of 1 it is odd
+            all_odd_nums.append(num) # append odd num to emty list
 
-#     print "Nothing at all"
+    return all_odd_nums # return list of odd numbers
 
 
-# def foods_in_common(foods1, foods2):
-#     """Find foods in common.
+def print_indices(items):
+    """Print index of each item in list, followed by item itself.
 
-#     Given 2 lists of foods, return the items that are in common
-#     between the two, sorted alphabetically.
+    Do this without using a "counting variable" --- that is, don't
+    do something like this::
 
-#     **NOTE**: for this problem, you're welcome to use any of the
-#     Python data structures you've been introduced to (not just
-#     lists). Is there another that would be a good idea?
+        count = 0
+        for item in list:
+            print count
+            count = count + 1
 
-#     For example::
+    Output should look like this::
 
-#         >>> foods_in_common(
-#         ...     ["cheese", "bagel", "cake", "kale", "zebra cakes"],
-#         ...     ["hummus", "cheese", "beets", "kale", "lentils", "bagel", "cake" ]
-#         ... )
-#         ['bagel', 'cake', 'cheese', 'kale']
-        
-#     If there are no foods in common, return an empty list::
+        >>> print_indices(["Toyota", "Jeep", "Volvo"])
+        0 Toyota
+        1 Jeep
+        2 Volvo
 
-#         >>> foods_in_common(
-#         ...     ["lamb", "chili", "cheese"],
-#         ...     ["cake", "ice cream"]
-#         ... )
-#         []
+        >>> print_indices(["Toyota", "Jeep", "Toyota", "Volvo"])
+        0 Toyota
+        1 Jeep
+        2 Toyota
+        3 Volvo
 
-#     """
+    """
+    # for each index in the list of items being
+    # passed in to the function,
 
-#     return ['the wrong thing']
+    for index in range(len(items)):
+        print index, items[index]   # print the index, and the
+                                    # item in that index, on
+                                    # the same line
+
+
+def foods_in_common(foods1, foods2):
+    """Find foods in common.
+
+    Given 2 lists of foods, return the items that are in common
+    between the two, sorted alphabetically.
+
+    **NOTE**: for this problem, you're welcome to use any of the
+    Python data structures you've been introduced to (not just
+    lists). Is there another that would be a good idea?
+
+    For example::
+
+        >>> foods_in_common(
+        ...     ["cheese", "bagel", "cake", "kale", "zebra cakes"],
+        ...     ["hummus", "cheese", "beets", "kale", "lentils", "bagel", "cake" ]
+        ... )
+        ['bagel', 'cake', 'cheese', 'kale']
+
+    If there are no foods in common, return an empty list::
+
+        >>> foods_in_common(
+        ...     ["lamb", "chili", "cheese"],
+        ...     ["cake", "ice cream"]
+        ... )
+        []
+
+    """
+
+    # create two variable sets that will house two different food
+    # lists pasted in through the function call
+
+    foods_set_1 = set(foods1)
+    foods_set_2 = set(foods2)
+
+    foods_in_common_list = list(foods_set_1 & foods_set_2)  # combine the two sets
+                                                            # set() will only allow
+                                                            # for unique elements
+                                                            # convert the combined
+                                                            # set into a list, assign
+                                                            # to variable
+
+    foods_in_common_list.sort()  # sort list in place
+
+    return foods_in_common_list  # return list
 
 
 # def every_other_item(items):
@@ -96,8 +121,29 @@
 #        ... )
 #        ['you', 'are', 'good', 'at', 'code']
 #     """
+    ############ not sure on this one ###########
+    ################# tried serveral different aproches but not getting it
+    ################ need guidence 
+    # create empty list to add results to
 
-#     return ['the wrong thing']
+    # result_itmes_list = []
+
+    # i = 0
+
+    # iterate through items-list passed in by finction call
+    # observe the range of the list start iteration at index 0, observe the  
+    # length of the item/string in the list and do so while stepping by two
+    # for i in range(len(items)):
+        # output_item = items[i:3:2]
+
+
+    # for index in range(0,len(items), 2):
+    #     item = items[index]  # grabbing item in items by its index
+    #                          # and asign it to a re-usable varible
+
+    # result_itmes_list.append(item)  # append each item to a list
+
+    # return result_itmes_list
 
 
 # def largest_n_items(items, n):
@@ -121,8 +167,16 @@
 #         >>> largest_n_items([3, 3, 3, 2, 1], 2)
 #         [3, 3]
 #     """
+    ## also stuck on this one
 
-#     return []
+    # result_largest_n_items = []
+
+    # for item in items:
+    #     if range(item) > n:
+
+    #         result_largest_n_items.append(item)
+
+    # return result_largest_n_items
 
 
 #####################################################################
